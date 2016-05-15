@@ -1,15 +1,17 @@
 // Hardcoded export for the node.js version:
 var sigma = this.sigma,
-    conrad = this.conrad;
+    conrad = this.conrad,
+    HTMLElement,
+    window;
 
 sigma.conrad = conrad;
 
 // Dirty polyfills to permit sigma usage in node
 if (HTMLElement === undefined)
-  var HTMLElement = function() {};
+  HTMLElement = function() {};
 
 if (window === undefined)
-  var window = {
+  window = {
     addEventListener: function() {}
   };
 
